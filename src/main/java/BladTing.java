@@ -1,6 +1,8 @@
 import com.sun.tools.javac.util.Convert;
 import com.sun.xml.internal.fastinfoset.util.CharArray;
 
+import java.util.Arrays;
+
 /**
  * Created by bka14 on 20/05/2016.
  */
@@ -80,6 +82,40 @@ public class BladTing {
             pos++;
         }
 
+        return str;
+    }
+
+    public String sortStringByASCCIICode(String s)
+    {
+        char[] split = s.toCharArray();
+
+        int[] charToInt = new int[s.length()];
+
+        char[] intToChar = new char[s.length()];
+
+        int pos = 0;
+
+        String z = "";
+
+        for (char x: split) {
+            int temp = (int)x;
+            charToInt[pos]= temp;
+            pos++;
+            z += "{" + temp + "}";
+        }
+
+        System.out.println("Z: " + z);
+        Arrays.sort(split);
+
+        String str = "";
+        pos = 0;
+
+        for (int a: split) {
+            char c = (char)a;
+            str += Character.toString(c);
+            pos++;
+        }
+        System.out.println("str: " + str);
         return str;
     }
 }

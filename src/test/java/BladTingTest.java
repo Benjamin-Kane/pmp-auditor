@@ -45,4 +45,11 @@ public class BladTingTest
         int[] gahhhh = new int[] {65,66,67};
         assertEquals("ABC", x.convertASCIICodeToString2(gahhhh));
     }
+
+    @Test
+    public void testingThatAnArrayOfCharsCanBeSortedByASCCIICodeAndReturnedAsAString() {
+
+        assertEquals("039DRd", x.sortStringByASCCIICode("D0dR93"));
+    }
+
 }
